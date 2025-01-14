@@ -1,3 +1,4 @@
-to statr the project 
-run npm i 
-npm run start
+"To start the project:
+
+Run npm install to install dependencies.
+Run npm start to launch the application."
