@@ -11,7 +11,7 @@ function Appp() {
   const { searchField } = useSelector((state) => {
     return state.searchReducer;
   });
-  const { robots, error, isPendinge } = useSelector((state) => {
+  const { robots, error, isPending } = useSelector((state) => {
     return state.requestRobotsReducer;
   });
   const dispatch = useDispatch();
@@ -21,14 +21,14 @@ function Appp() {
   };
 
   useEffect(() => {
-    dispatch(requestRobots);
-  }, []);
+    dispatch(requestRobots());
+  }, [dispatch]);
 
   const fielterdRobot = robots.filter((robotItems) => {
     return robotItems.name.toLowerCase().includes(searchField.toLowerCase());
   });
 
-  if (isPendinge) {
+  if (isPending) {
     return <h1>Loading</h1>;
   } else if (!(error === "")) {
     return <h1>oooo no it's not good</h1>;
