@@ -10,8 +10,8 @@ import { thunk } from "redux-thunk";
 
 import "./index.css";
 import { searchReducer, requestRobotsReducer } from "./container/reducer";
-// import Appp from "./container/AppHooksRedux";
-import App from "./container/App";
+import Appp from "./container/AppHooksRedux";
+// import App from "./container/App";
 
 const rootReducer = combineReducers({ requestRobotsReducer, searchReducer });
 
@@ -24,7 +24,7 @@ const root = createRoot(document.getElementById("root"));
 root.render(
   <div className="tc">
     <Provider store={store}>
-      <App />
+      <Appp />
     </Provider>
   </div>
 );
